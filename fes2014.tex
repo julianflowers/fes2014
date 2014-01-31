@@ -1,0 +1,261 @@
+\documentclass{beamer}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{booktabs}
+%\graphicspath{F:/antimicrobial resistance/Simon/thorax2/FES2014/R_code}
+\usepackage{hyperref}
+
+\definecolor{pheMainRed}{cmyk}{0, 1, 0.61, 0.43}
+\definecolor{pheMainBlue}{cmyk}{0.9, 0, 0.49, 0}
+\defbeamertemplate*{title page}{customised}[1][]{%
+
+%-----------------------------------------------------------
+% Redefine title page
+%-----------------------------------------------------------
+\begin{tikzpicture}[remember picture,overlay]
+\fill[pheMainRed]
+([yshift=60pt]current page.west) rectangle (current page.south east);
+%\draw([yshift=60pt]current page.west) circle (0.5cm);
+\fill[pheMainBlue]
+([yshift=60pt]current page.west) rectangle ([yshift=65pt]current page.east);
+\node[anchor=west]
+	at ([yshift=-5pt]current page.west) (title)
+%	(title)
+	{\parbox[t]{\linewidth}{\raggedright\usebeamerfont{title}\usebeamercolor[fg]{title}\Large\inserttitle}};
+\node[anchor=west]
+	at ([yshift=25pt]current page.south west) (author)
+	{\parbox[t]{\linewidth}{\raggedright\usebeamerfont{title}\usebeamercolor[fg]{title}\normalsize\insertauthor}};	
+\node[anchor=south west] 
+  at ([yshift=90pt]current page.west) (logo)
+  {\parbox[t]{.19\paperwidth}{\raggedleft%
+    \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic}};
+\end{tikzpicture}
+}
+%-----------------------------------------------------------
+% Redefine footer
+%-----------------------------------------------------------
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{footBox}%
+%    \usebeamerfont{author in head/foot}\insertshortauthor
+    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.8\paperwidth,ht=2.25ex,dp=1ex,center]{footBox}%
+    \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+%-----------------------------------------------------------
+% Redefine colours
+%-----------------------------------------------------------
+\setbeamercolor{footBox}{fg=white, bg=pheMainRed}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{frametitle}{fg=pheMainBlue}
+\setbeamercolor{bibliography entry author}{fg=pheMainBlue}
+\setbeamercolor{bibliography entry location}{fg=white!30!pheMainBlue}
+\setbeamercolor{itemize item}{fg=pheMainBlue}
+\setbeamercolor{itemize subitem}{fg=pheMainBlue}
+\setbeamercolor{itemize subsubitem}{fg=pheMainBlue}
+\setbeamercolor{description item}{fg=pheMainBlue}
+
+%\setbeamercolor{title}{fg=pheMainRed}
+\titlegraphic{\includegraphics[width=2cm]{phe_logo}}
+\setbeamercolor{titleBox}{fg=white, bg=pheMainRed}
+\hypersetup{urlcolor = pheMainBlue} % Set colour of URLs
+
+\setbeamercovered{transparent}
+
+%-----------------------------------------------------------
+% Title and authors
+%-----------------------------------------------------------
+\title[Trends in susceptibility of \textit{H. influenzae}, \textit{S. pneumoniae} and \textit{S. aureus} from respiratory isolates]{Trends in the antibioitic susceptibilities of \textit{Haemophilus influenzae}, \textit{Streptococcus pneumoniae} and \textit{Staphylococcus aureus} from respiratory isolates in England, Wales and Northern Ireland, 2008 - 2013}
+\subtitle{}
+\author{Simon Thelwall\inst{1}
+\and
+Rebecca Guy\inst{1}
+\and Katherine L Henderson\inst{1}
+\and Macey L Murray\inst{2}
+\and Mike Sharland\inst{3}
+\and Berit Muller-Pebody\inst{1} 
+\and Alan Johnson\inst{1}}
+
+\institute[Public Health England] % (optional, but mostly needed)
+{
+  \inst{1}%
+  Department of Healthcare Associated Infections and Antimicrobial Resistance, Centre for Disease Surveillance and Control, Public Health England
+  \\
+  \inst{2}%
+  Centre for Paediatric Pharmacy Research, Department of Practice and Policy, UCL School of Pharmacy, University College London, London, UK
+  \\
+  \inst{3}%
+  Paediatric Infectious Diseases Unit, St George's Hospital NHS Trust, London, UK
+}
+\date{03 March 2014}
+
+%-----------------------------------------------------------
+% Start the actual document
+%-----------------------------------------------------------
+
+\begin{document}
+{ % remove footline from title page. 
+\setbeamertemplate{footline}{} 
+\begin{frame}
+\maketitle
+\end{frame}
+}
+\addtocounter{framenumber}{-1}
+
+\begin{frame}{Background - 1}
+Resistance in organisms likely to cause secondary infections in the event of an influenza pandemic. 
+\begin{thebibliography}{Blackburn et al, 2011}
+\bibitem{Blackburn2011}
+{\footnotesize
+Blackburn, R. M., Henderson, K. L., Lillie, M., Sheridan, E., George, R. C., Deas, A. H. B., \& Johnson, A. P. (2011). 
+\newblock Empirical treatment of influenza-associated pneumonia in primary care: a descriptive study of the antimicrobial susceptibility of lower respiratory tract bacteria (England, Wales and Northern Ireland, January 2007-March 2010). 
+\newblock Thorax, 66(5), 389–95. doi:10.1136/thx.2010.134643
+}
+\end{thebibliography}
+\end{frame}
+
+\begin{frame}{Background - 2}
+Recommended empiric antibiotic for community management of CAP in adults:
+\begin{itemize}
+\item Amoxicillin 
+\item Doxycycline or clarithromycin for penicillin hypersensitive patients
+\item On failure of initial empiric therapy: macrolide
+\end{itemize}
+\begin{thebibliography}{Lim et al, 2009}
+\bibitem{Lim2009}
+{\footnotesize
+Lim, W. S., Baudouin, S. V, George, R. C., Hill, A. T., Jamieson, C., Le Jeune, I., … Woodhead, M. A. (2009). 
+\newblock BTS guidelines for the management of community acquired pneumonia in adults: update 2009. 
+\newblock Thorax, 64 Suppl 3(October), iii1–55. doi:10.1136/thx.2009.121434
+}
+\end{thebibliography}
+\end{frame}
+
+\begin{frame}{Methods}
+\begin{description}
+\item[Data source]LabBase - voluntary surveillance of clinically relevant infections. 
+\begin{itemize}
+\item Respiratory samples: sputum, trachea, broncheoles or alveolar lavage.
+\item January 2008 - June 2013.
+\item hospital outpatient or GP patients.
+\end{itemize}
+\pause \item[Resistance] Isolate reported as intermediate or resistant. \hfill \\
+Where multiple sensitivities reported, resistant result took precendence.
+\pause \item[Analysis] R version 3.0.2
+\begin{itemize}
+\pause \item Linear regression for trend in number of isolates reported.
+\pause \item Poisson regression for annual change in number of resistant isolates reported.
+\begin{itemize}
+\item Adjusted for age, sex, calendar quarter and region.
+\end{itemize}
+\end{itemize}
+\end{description}
+\end{frame}
+\section{Results}
+\begin{frame}{Results - summary figures}
+\begin{itemize}
+\item 180 499 isolates
+\begin{itemize}
+\item 117 579 (65 \%) \textit{H. influenzae}
+\item 31 914 (18 \%) \textit{S. aureus}
+\item 31 006 (17 \%) \textit{S. pneumoniae}
+\end{itemize}
+\pause \item 142 labs
+\pause \item 96 \% from sputum
+\pause \item 70 \% from GP patients
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Results - age structure}
+\begin{figure}
+\includegraphics[width = \textwidth]{age_fig}
+%\caption{Age structure for patients providing respiratory isolates, by organism. England, Wales and Northern Ireland. 2008 - June 2013.}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Results - Trend in number of isolates}
+\begin{figure}
+\includegraphics[width = \textwidth]{trend_isolates}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Results - Trend in proportion of isolates tested}
+\begin{figure}
+\includegraphics[width = \textwidth]{trend_testing}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Results - Trend in resistance} 
+\begin{figure}
+\includegraphics[width = \textwidth]{trend_resistance}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Results - Incident rate ratios for annual change in susceptibility}
+% The following is an enormous mess but gets the job done. 
+\begin{table}
+   \centering
+   \tiny%\addtolength{\tabcolsep}{-5pt}
+   \begin{tabular}{rrlll}
+  \hline
+ &  & \multicolumn{3}{c}{Organism}\\
+  \cline{3-5}
+Antibiotic & \shortstack{Age \\group} & \textit{H. influenzae} & \textit{S. aureus} & \textit{S. pneumoniae} \\ 
+  \midrule
+\onslide<1>{ \shortstack{Ampicillin/\\amoxicillin}} & \onslide<1>{ - }& \onslide<1>{ 1.03 (1.02-1.03)} & \onslide<1>{ 1.01 (1.00-1.03)} & \onslide<1>{ 1.12 (1.05-1.20)} \\ 
+\onslide<2>{ Clarithromycin} & \onslide<2>{$<45$ }& \onslide<2>{1.01 (1.00-1.01)} & \onslide<2>{1.00 (0.95-1.06)} & \onslide<2>{1.06 (0.96-1.17)}\\ 
+\onslide<2>{  }& \onslide<2>{ 45-64} & \onslide<2>{ 1.01 (1.00-1.01)} & \onslide<2>{ 1.01 (0.95-1.07)} & \onslide<2>{ 1.10 (1.03-1.16)} \\ 
+\onslide<2>{  }& \onslide<2>{ 65-74} & \onslide<2>{ 1.00 (1.00-1.01)} & \onslide<2>{ 0.95 (0.89-1.01)} & \onslide<2>{ 1.11 (1.04-1.18)} \\ 
+\onslide<2>{  }& \onslide<2>{ $\geq 75$} & \onslide<2>{ 1.01 (1.00-1.01)} & \onslide<2>{ 1.05 (0.99-1.12)} & \onslide<2>{ 1.09 (1.01-1.17)} \\ 
+\onslide<2>{  }& \onslide<2>{ Unknown} & \onslide<2>{ 1.00 (0.91-1.09)} & \onslide<2>{ 0.97 (0.09-10.75)} & \onslide<2>{ 0.99 (0.70-1.40)} \\ 
+\onslide<3>{ Doxycycline} & \onslide<3>{$<45$} & \onslide<3>{0.80 (0.65-0.98)} & \onslide<3>{1.36 (1.13-1.63)} & \onslide<3>{1.03 (0.81-1.31)} \\ 
+\onslide<3>{  }& \onslide<3>{45-64} & \onslide<3>{0.85 (0.71-1.01) }& \onslide<3>{1.01 (0.85-1.20)} & \onslide<3>{1.14 (1.01-1.28)} \\ 
+\onslide<3>{  }& \onslide<3>{65-74} & \onslide<3>{0.86 (0.69-1.07) }& \onslide<3>{1.18 (0.90-1.55)} & \onslide<3>{1.34 (1.18-1.52)} \\ 
+\onslide<3>{  }& \onslide<3>{$\geq 75$} & \onslide<3>{0.90 (0.71-1.15)} & \onslide<3>{1.14 (0.90-1.42)} & \onslide<3>{1.10 (0.94-1.29)} \\ 
+\onslide<3>{  }& \onslide<3>{Unknown} & \onslide<3>{0.93 (0.57-1.54)} & \onslide<3>{0.95 (0.08-10.74)} & \onslide<3>{- }\\ 
+\bottomrule  
+\end{tabular}
+%   \caption{Incident rate ratios for annual change in susceptibility to recommended antimicrobials, England, Wales and Northern Ireland 2008-2013.
+%   Adjusted for calendar quarter, laboratory region, specimen source, male sex and patient age.}
+%   \label{tab:table1}
+   \end{table} 
+\end{frame}
+
+\begin{frame}{Trend in resistance to both ampicillin/amoxicillin and a macrolide}
+\begin{figure}
+\includegraphics[width = \textwidth]{trend_multi}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Incident rate ratios for multi-resistance.}
+\begin{figure}
+incident rate ratio table in here. Interactions?
+\end{figure}
+\end{frame}
+
+\section{Conclusions}
+\begin{frame}{Conclusions}
+\begin{itemize}
+\item Increasing numbers of isolates being reported. 
+\pause \item Increasing resistance to recommended antibiotics being observed in some organisms.
+\pause \item Resistance to first and second line treatments increasing. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{End matter}
+\begin{description}
+\item[Acknowledgements]\insertinstitute
+\item[Code] \url{https://github.com/simonthelwall/}
+\item[Email] \href{mailto:simon.thelwall@phe.gov.uk}{\nolinkurl{simon.thelwall@phe.gov.uk} }
+\end{description}
+\end{frame}
+
+\end{document}
