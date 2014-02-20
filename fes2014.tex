@@ -23,8 +23,11 @@
 %	(title)
 	{\parbox[t]{\linewidth}{\raggedright\usebeamerfont{title}\usebeamercolor[fg]{title}\Large\inserttitle}};
 \node[anchor=west]
-	at ([yshift=25pt]current page.south west) (author)
+	at ([yshift=50pt]current page.south west) (author)
 	{\parbox[t]{\linewidth}{\raggedright\usebeamerfont{title}\usebeamercolor[fg]{title}\normalsize\insertauthor}};	
+\node[anchor=west]
+	at ([yshift=25pt]current page.south west) (date)
+	{\parbox[t]{\linewidth}{\raggedright\usebeamerfont{title}\usebeamercolor[fg]{title}\normalsize\insertdate\\Field Epidemiology Scientific Meeting}};	
 \node[anchor=south west] 
   at ([yshift=90pt]current page.west) (logo)
   {\parbox[t]{.19\paperwidth}{\raggedleft%
@@ -73,28 +76,11 @@
 %-----------------------------------------------------------
 % Title and authors
 %-----------------------------------------------------------
-\title[Trends in susceptibility of \textit{H. influenzae}, \textit{S. pneumoniae} and \textit{S. aureus} from respiratory isolates]{Trends in the antibioitic susceptibilities of \textit{Haemophilus influenzae}, \textit{Streptococcus pneumoniae} and \textit{Staphylococcus aureus} from respiratory isolates in England, Wales and Northern Ireland, 2008 - 2013}
+\title[Trends in susceptibility of \textit{H. influenzae}, \textit{S. pneumoniae} and \textit{S. aureus} from respiratory isolates]{Trends in the antibiotic susceptibilities of \textit{Haemophilus influenzae}, \textit{Streptococcus pneumoniae} and \textit{Staphylococcus aureus} from respiratory isolates in England, Wales and Northern Ireland, 2008 - 2013}
 \subtitle{}
-\author{Simon Thelwall\inst{1}
-\and
-Rebecca Guy\inst{1}
-\and Katherine L Henderson\inst{1}
-\and Macey L Murray\inst{2}
-\and Mike Sharland\inst{3}
-\and Berit Muller-Pebody\inst{1} 
-\and Alan Johnson\inst{1}}
+\author{Simon Thelwall}
 
-\institute[Public Health England] % (optional, but mostly needed)
-{
-  \inst{1}%
-  Department of Healthcare Associated Infections and Antimicrobial Resistance, Centre for Disease Surveillance and Control, Public Health England
-  \\
-  \inst{2}%
-  Centre for Paediatric Pharmacy Research, Department of Practice and Policy, UCL School of Pharmacy, University College London, London, UK
-  \\
-  \inst{3}%
-  Paediatric Infectious Diseases Unit, St George's Hospital NHS Trust, London, UK
-}
+
 \date{03 March 2014}
 
 %-----------------------------------------------------------
@@ -141,7 +127,7 @@ Lim, W. S., Baudouin, S. V, George, R. C., Hill, A. T., Jamieson, C., Le Jeune, 
 
 \begin{frame}{Methods}
 \begin{description}
-\item[Data source]LabBase - voluntary surveillance of clinically relevant infections. 
+\item[Data source]LabBase - voluntary laboratory surveillance of clinically relevant infections. 
 \begin{itemize}
 \item Respiratory samples: sputum, trachea, broncheoles or alveolar lavage.
 \item January 2008 - June 2013.
@@ -164,9 +150,9 @@ Where multiple sensitivities reported, resistant result took precendence.
 \begin{itemize}
 \item 180 499 isolates
 \begin{itemize}
-\item 117 579 (65 \%) \textit{H. influenzae}
-\item 31 914 (18 \%) \textit{S. aureus}
-\item 31 006 (17 \%) \textit{S. pneumoniae}
+\item 65 \% \textit{H. influenzae}
+\item 18 \% \textit{S. aureus}
+\item 17 \% \textit{S. pneumoniae}
 \end{itemize}
 \pause \item 142 labs
 \pause \item 96 \% from sputum
@@ -174,32 +160,35 @@ Where multiple sensitivities reported, resistant result took precendence.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Results - age structure}
+\begin{frame}{Results - Age structure of patients providing respiratory isolates, by organism. England, Wales and Northern Ireland. 2008 - June 2013}
 \begin{figure}
 \includegraphics[width = \textwidth]{age_fig}
 %\caption{Age structure for patients providing respiratory isolates, by organism. England, Wales and Northern Ireland. 2008 - June 2013.}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Results - Trend in number of isolates}
+\begin{frame}{Results - Trend in number of respiratory isolates, by organism. England, Wales and Northern Ireland. 2008 - June 2013}
 \begin{figure}
-\includegraphics[width = \textwidth]{trend_isolates}
+\centering
+\includegraphics[width = 0.85\textwidth]{trend_isolates}
+%\includegraphics[height = \textheight]{trend_isolates}
+%\includegraphics[scale=0.75, keepaspectratio = true]{trend_isolates}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Results - Trend in proportion of isolates tested}
+\begin{frame}{Results - Trend in proportion of respiratory isolates tested, by organism. England, Wales and Northern Ireland. 2008 - June 2013}
 \begin{figure}
-\includegraphics[width = \textwidth]{trend_testing}
+\includegraphics[width = 0.85\textwidth]{trend_testing}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Results - Trend in resistance} 
+\begin{frame}{Results - Trend in resistance of respiratory isolates tested, by organism. England, Wales and Northern Ireland. 2008 - June 2013} 
 \begin{figure}
-\includegraphics[width = \textwidth]{trend_resistance}
+\includegraphics[width = 0.85\textwidth]{trend_resistance}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Results - Incident rate ratios for annual change in susceptibility}
+\begin{frame}{Results - Incident rate ratios for annual change in susceptibility. England, Wales and Northern Ireland. 2008 - June 2013}
 % The following is an enormous mess but gets the job done. 
 \begin{table}
    \centering
@@ -229,30 +218,47 @@ Antibiotic & \shortstack{Age \\group} & \textit{H. influenzae} & \textit{S. aure
    \end{table} 
 \end{frame}
 
-\begin{frame}{Trend in resistance to both ampicillin/amoxicillin and a macrolide}
+\begin{frame}{Trend in resistance to both ampicillin/amoxicillin and any macrolide. England, Wales and Northern Ireland. 2008 - June 2013}
 \begin{figure}
 \includegraphics[width = \textwidth]{trend_multi}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Incident rate ratios for multi-resistance.}
-\begin{figure}
-incident rate ratio table in here. Interactions?
-\end{figure}
+\begin{frame}{Incident rate ratios for resistance to both ampicillin/amoxicillin and any macrolide. England, Wales and Northern Ireland. 2008 - June 2013.}
+% latex table generated in R 3.0.2 by xtable 1.7-1 package
+% Mon Feb 17 15:49:47 2014
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrr}
+  \toprule
+Organism & Incident rate ratio & 95 \% confidence interval \\ 
+  \midrule
+\textit{H. influenzae} & 1.04 & (1.03 - 1.06) \\ 
+  \textit{S. aureus} & 0.98 & (0.93 - 1.03) \\ 
+  \textit{S. pneumoniae} & 1.16 & (1.07 - 1.25) \\ 
+   \bottomrule
+\end{tabular}
+\end{table}
 \end{frame}
+
 
 \section{Conclusions}
 \begin{frame}{Conclusions}
 \begin{itemize}
 \item Increasing numbers of isolates being reported. 
-\pause \item Increasing resistance to recommended antibiotics being observed in some organisms.
-\pause \item Resistance to first and second line treatments increasing. 
+\pause \item Strong increases in resistance to ampicillin/amoxicillin among \textit{S. pneumoniae} and to doxycycline among \textit{S. aureus} and \textit{S. pneumoniae}. 
+\pause \item Resistance to first and second line treatments increasing in \textit{H. influenzae} and \textit{S. pneumoniae}. 
 \end{itemize}
 \end{frame}
 
 \begin{frame}{End matter}
 \begin{description}
-\item[Acknowledgements]\insertinstitute
+\item[Acknowledgements]Rebecca Guy, Berit Muller-Pebody, Alan Johnson. 
+Department of Healthcare Associated Infections and Antimicrobial Resistance, Centre for Disease Surveillance and Control, Public Health England.
+
+Macey Murray. Centre for Paediatric Pharmacy Research, Department of Practice and Policy, UCL School of Pharmacy, University College London
+
+Mike Sharland. Paediatric Infectious Diseases Unit, St George's Hospital NHS Trust, London, UK
 \item[Code] \url{https://github.com/simonthelwall/}
 \item[Email] \href{mailto:simon.thelwall@phe.gov.uk}{\nolinkurl{simon.thelwall@phe.gov.uk} }
 \end{description}
