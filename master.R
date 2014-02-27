@@ -90,6 +90,8 @@ round( (sum(df$uniq[df$organism.name == "STREPTOCOCCUS PNEUMONIAE"]) / sum(df$un
 
 # Classify resistances
 source("F:\\antimicrobial resistance\\Simon\\thorax2\\non_susceptibility.R")
+save(df, file = "classified_and_cleaned.RData")
+# load("classified_and_cleaned.RData")
 
 # Resistance to any recommended ceph ####
 abx <- subset(df, antimicrobial.name=="CEFTRIAXONE" | antimicrobial.name=="CEFOTAXIME" | 
