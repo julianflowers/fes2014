@@ -14,7 +14,7 @@ df2$sex[df2$sex == "F"] <- "Female"
 df2$sex[df2$sex == "U"] <- "Unknown"
 
 p <- ggplot(df2, aes(x = age.group)) + geom_histogram(aes(fill = sex)) + facet_wrap(~organism.name, ncol = 3, scales = "free_y") + 
-  theme_grey(base_size = 8) + theme(strip.text.x = element_text(face = 'italic'), 
+  theme_grey(base_size = 14) + theme(strip.text.x = element_text(face = 'italic'), 
                                     axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)) + 
   scale_x_discrete("Age group", labels = c("<1 month", "1-11 months", "1-4 years", "5-9 years", 
                                            "10-14 years", "15-44 years", "45-64 years", "65-74 years", 
